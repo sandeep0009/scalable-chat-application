@@ -1,5 +1,5 @@
 import {describe, expect, test} from "bun:test";
-import WebSocket from "ws";
+
 
 
 
@@ -36,7 +36,6 @@ describe('Chat application', () => {
         await new Promise<void>((resolve)=>{
 
              ws2.onmessage=({data})=>{
-                console.log('data',data);
             const parsedData=JSON.parse(data);
             expect(parsedData.type="chat");
             expect(parsedData.message="hi there");
